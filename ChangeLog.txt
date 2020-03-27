@@ -1,0 +1,71 @@
+Change Log, updated 23/03/2018
+
+v1.9 NTLM & vproxy improvements
+•	NTLM user credentials in command line too
+•	default ports according to authentication method
+•	schema accepted in proxy string (http://proxy:port)
+•	argument -p proxy renamed to -P
+•	command line help completed
+
+
+v1.8 Improvements
+•	virtual proxy ensured to work even in complex proxies with multiple redirections
+
+
+v1.7 New functionality
+•	NTLM authentication supported
+•	userDirectory and userID params in constructors are consolidated in param "user" (tuple or dict with credentials)
+
+
+v1.6 Improvements 
+•	standardization of exceptions : are raised without masking and must be handle outside API
+•	Added command line support, example:
+		python qsAPI.py -s myServer -c dir/client.pem -Q QRS AppExport d8b120d7-a6e4-42ff-90b2-2ac6a3d92233
+
+
+v1.5 New functions & Fixed 
+•	Fixed version legacy for AppExport
+•	Added StreamCreate
+•	Added StreamUpdate
+
+
+v1.4 New functions & Improvements 
+•	Modified AppPublish: optional alternate name
+•	Return standardization: only GET request return the json directly,
+		PUT/POST/DELETE return the Response object to allow check status and complementary info
+		- AppPublish
+•	Fixed AppDelete: wrong endpoint
+•	Added AppUpdate
+•	AppExport use API method according server version 
+•	Fixed AppExport to maintain compatibility for big files (over 2Gb) 
+
+
+v1.3 New functions, fixed and improvements 
+•	Added StreamDictAttributes	
+•	Added UserDictAttributes
+•	Added SystemRulesDictAttributes
+•	Fixed: getAbout now return the json response and not the Response object
+•	constructor proxy & port params allow compact format proxy="host:port"
+
+
+v1.2 - Implemented standard logging
+
+•	Modified constructors, is allowed an external logger instance by param
+•	Default console output if logging handler is not provided
+•	Verbose inner class is no longer used (replaced by package logging)
+
+
+
+v1.1 - Merged fixed from Marcin Gamza (@gammar7) 
+
+•	Fixed Invalid header name error
+•	Added StreamGet method
+•	Added AppReload method
+•	Added AppPublish method
+•	Fixed AppExport method according to February 2018 API
+•	Fixed AppUpload method according to February 2018 API
+•	Adding AppReplace method
+•	Added AppDelete method
+
+
+v1.0 - Initial Release
